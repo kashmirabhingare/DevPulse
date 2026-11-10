@@ -80,10 +80,15 @@ public class SecurityConfig {
 
         CorsConfiguration configuration = new CorsConfiguration();
 
+        // Allowed frontend origins
         configuration.setAllowedOrigins(
-                List.of("http://localhost:5173")
+                List.of(
+                        "http://localhost:5173",
+                        "https://dev-pulse-pink-eight.vercel.app"
+                )
         );
 
+        // Allowed HTTP methods
         configuration.setAllowedMethods(
                 List.of(
                         "GET",
@@ -95,6 +100,7 @@ public class SecurityConfig {
                 )
         );
 
+        // Allowed request headers
         configuration.setAllowedHeaders(
                 List.of(
                         "Authorization",
